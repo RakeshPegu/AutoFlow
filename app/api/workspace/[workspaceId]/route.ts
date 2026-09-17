@@ -3,6 +3,7 @@ import { auth } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
 
 export  async function GET(
+    request:NextRequest,
     { params }: { params: Promise<{ workspaceId: string }> }
 ){
     try {       
@@ -138,7 +139,7 @@ export async function DELETE(params:Promise<{workspaceId:string}>){
         return NextResponse.json({
             success:false,
             message:error instanceof Error ? error.message : 'Something went wrong'
-        })
+        },)
         
     }
 
