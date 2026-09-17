@@ -1,0 +1,96 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id               String            @id @default(cuid())
+  email            String            @unique
+  clerkUserId      String            @unique
+  workspaceMembers WorkspaceMember[]
+}
+
+model Workspace {
+  id              String            @id @default(cuid())
+  companyName     String
+  leads           Lead[]
+  clerkOrganizationId  String?       @unique
+  subscriptions   Subscription[]
+  workspaceMember WorkspaceMember[]
+  totalToken      Int               @default(0)
+  usedTokens      Int               @default(0)
+  secretkey       String
+}
+
+enum Role {
+  ADMIN
+  ASSOCIATE
+}
+
+model WorkspaceMember {
+  id          String    @id @default(cuid())
+  email       String
+  role        Role      @default(ASSOCIATE)
+
+  userId      String
+  user        User      @relation(fields: [userId], references: [id])
+
+  workspaceId String
+  workspace   Workspace @relation(fields: [workspaceId], references: [id])
+
+  @@unique([userId, workspaceId])
+}
+enum StatusTypes {
+  PENDING
+  RECEIVED
+}
+enum LeadTypes {
+  HOT
+  COLD
+}
+model Lead {
+  id   String @id @default(cuid()) @unique
+  name String
+  email String @unique
+  phoneNumber String
+  score Int?
+  classification LeadTypes?
+  reason String[] @default([])
+  status StatusTypes @default(PENDING)
+  workspace Workspace  @relation(fields: [workspaceId], references: [id])
+  workspaceId String  
+
+}
+
+
+model Subscription {
+  id                   String   @id @default(cuid())
+
+  clerkSubscriptionId  String   
+  clerkItemId          String   @unique
+
+  workspaceId          String   
+  workspace            Workspace @relation(fields: [workspaceId], references: [id])
+
+  planId               String
+  planName             String
+  planSlug             String
+
+  status               String
+  interval             String
+
+  totalTokens          Int
+  amount               Int
+  currency             String
+
+  periodStart           DateTime
+  periodEnd             DateTime?
+  isFreeTrial           Boolean @default(false)
+
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+}

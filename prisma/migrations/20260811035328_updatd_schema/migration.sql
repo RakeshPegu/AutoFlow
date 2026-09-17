@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "Lead" ALTER COLUMN "status" SET NOT NULL,
+ALTER COLUMN "status" SET DATA TYPE TEXT;
