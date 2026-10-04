@@ -62,7 +62,7 @@ export default function Navbar(){
             </Show>
             <Show when={'signed-in'}>
                 <UserButton/>
-                <Link href={'/dashboard'}>Dashboard</Link>
+                <Link href={'/dashboard/overview'}>Dashboard</Link>
             </Show>
 
         </div>
