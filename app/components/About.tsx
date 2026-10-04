@@ -7,7 +7,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className=" flex flex-col  items-center bg-amber-100 px-2 lg:pb-30 lg:pt-15 lg:gap-30"
+      className=" flex flex-col py-6 gap-6 pl-4  items-center bg-amber-100 px-2 lg:pb-30 lg:pt-15 lg:gap-30"
     >
     <div className="flex flex-col items-center">
         <Badge  variant="outline" className="text-xl px-6 py-4 lg:px-10 lg:text-lg lg:py-5 lg:mb-6" >
@@ -36,7 +36,7 @@ export default function About() {
         </div>
 
         {/* Product Visual */}
-        <div className="relative flex items-center justify-center">
+        <div className="relative  hidden md:flex items-center justify-center">
           <div className="absolute -inset-6 rounded-3xl bg-blue-500/10 blur-3xl" />
 
           <div className="relative w-full max-w-2xl overflow-hidden rounded-2xl border border-slate-200 bg-white p-4 shadow-2xl shadow-slate-200/60">

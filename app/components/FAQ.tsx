@@ -92,7 +92,7 @@ export default function FAQ() {
                     type="button" 
                     onClick={() => toggleFAQ(index)} 
                     aria-expanded={isOpen} 
-                    className="flex w-full items-center justify-between gap-6 py-6 text-left"
+                    className="flex w-full items-center justify-between gap-6 py-4 text-left"
                   > 
                     <span className="text-base font-serif text-slate-900 gap-6 sm:text-lg"> 
                       {faq.question} 
@@ -126,7 +126,7 @@ export default function FAQ() {
           </div> 
 
           {/* Right Column: Image */} 
-          <div className="relative min-h-[400px] w-full lg:sticky lg:top-10 lg:min-h-[600px]"> 
+          <div className="relative hidden lg:flex min-h-[400px] w-full lg:sticky lg:top-10 lg:min-h-[600px]"> 
             <Image 
               src={faqBg} 
               alt="FAQ Illustration" 
