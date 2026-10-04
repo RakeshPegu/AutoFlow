@@ -40,7 +40,7 @@ export default function Navbar(){
     return(
        <header>
         {!hideNavbar&&
-       <nav className="flex fixed  top-4 py-3 rounded-2xl left-4 items-center w-[98%] z-50 justify-between bg-foreground text-white">
+       <nav className="flex fixed  top-4 py-3 rounded-2xl left-4 items-center w-[98%] z-50 justify-between bg-transparent  backdrop-blur-3xl">
         <div className="flex  ml-10">
             <h1 ><a href="/">AUTOFLOW</a></h1>
         </div>
