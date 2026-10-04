@@ -59,8 +59,8 @@ export default function FAQ() {
   }; 
 
   return ( 
-    <section id="faq" className="px-6 py-16 sm:px-10 lg:px-20"> 
-      <div className="mx-auto max-w-7xl"> 
+    <section id="faq" className="px-6  py-16 pb-50  sm:px-10 lg:px-20"> 
+      <div className="mx-auto max-w-7xl "> 
 
         {/* Header - Centered on Top */} 
         <div className="mb-14 text-center"> 
@@ -79,7 +79,7 @@ export default function FAQ() {
         </div> 
 
         {/* Two-Column Content Grid */} 
-        <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-16"> 
+        <div className="grid grid-cols-1 md:pt-10 items-start gap-12 lg:grid-cols-2 lg:gap-16"> 
           
           {/* Left Column: FAQ Accordion */} 
           <div className="divide-y divide-slate-200 border-y border-slate-200"> 
