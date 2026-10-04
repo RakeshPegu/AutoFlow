@@ -4,7 +4,7 @@ import "./globals.css";
 import Navbar from "./layout/Navbar";
 import { ClerkProvider } from '@clerk/nextjs'
 import Footer from "./layout/Footer";
-import { CreateKeyProvider } from "./context/formContext";
+import { CreateKeyProvider} from "./context/formContext";
 
 
 
@@ -24,6 +24,7 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
+ 
   return (
     <html
       lang="en"
@@ -34,7 +35,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <ClerkProvider>
           <CreateKeyProvider>
           <Navbar/>      
-          <main>
+          <main >
           {children}
           </main>
           <Footer/>
