@@ -58,7 +58,7 @@ export default function Process() {
   ];
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center py-12 px-4 gap-6  lg:gap-24" id="process">
+    <section className="min-h-screen flex flex-col items-center justify-center py-12 px-4 gap-6  lg:gap-14" id="process">
      <div className="flex flex-col w-full max-w-full items-center lg:gap-10">
       <Badge variant="outline" className="text-xl px-6 py-4 lg:px-10 lg:text-lg lg:py-5">
         Get started
@@ -72,16 +72,16 @@ export default function Process() {
       </p>
       </div>
       </div>
-      <div className="grid w-full max-w-7xl mt-30 grid-cols-1 gap-y-20 sm:grid-cols-2 md:grid-cols-4 lg:gap-10">
+      <div className="grid w-full mt-20   grid-cols-1 gap-y-6 md:gap-y-0 sm:grid-cols-2 md:grid-cols-4 lg:gap-x-2">
         {steps.map((step, indx) => (
           <div
             key={indx}
-            className="w-full  overflow-visible  bgrounded-xl"
+            className="h-full overflow-visible "
           >
             <Image
               src={step.image}
               alt={`Step ${indx + 1}`}
-              className="h-70 w-96 object-fill  sm:h-full sm:w-full  sm:object-cover scale-150 lg:scale-200 "
+              className="object-contain md:hover:scale-120 scale-90 md:scale-106 hover:scale-100  aspect-square transition-all duration-500 "
             />
           </div>
         ))}
