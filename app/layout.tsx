@@ -4,6 +4,9 @@ import "./globals.css";
 import Navbar from "./layout/Navbar";
 import { ClerkProvider } from '@clerk/nextjs'
 import Footer from "./layout/Footer";
+import { CreateKeyProvider } from "./context/formContext";
+
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,13 +30,17 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        
         <ClerkProvider>
+          <CreateKeyProvider>
           <Navbar/>      
           <main>
           {children}
           </main>
           <Footer/>
+          </CreateKeyProvider>
         </ClerkProvider>
+       
       </body>
     </html>
   );
